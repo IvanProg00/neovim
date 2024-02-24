@@ -8,6 +8,7 @@ return {
         "hadolint",
         "golangci-lint",
         "sqlfluff",
+        "tfsec",
       })
     end,
   },
@@ -17,6 +18,7 @@ return {
       linters_by_ft = {
         go = { "golangcilint" },
         sql = { "sqlfluff" },
+        terraform = { "tfsec" },
       },
     },
   },
