@@ -5,8 +5,9 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
-        "hadolint",
+        "emmet-language-server",
         "golangci-lint",
+        "hadolint",
         "sqlfluff",
         "tfsec",
       })
@@ -26,9 +27,15 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "gitignore",
         "make",
+        "nu",
+        "scss",
         "svelte",
       },
+    },
+    dependencies = {
+      { "nushell/tree-sitter-nu" },
     },
   },
   {
