@@ -9,6 +9,7 @@ return {
         "golangci-lint",
         "hadolint",
         "sqlfluff",
+        "sql-formatter",
         "tfsec",
       })
     end,
@@ -27,10 +28,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "css",
+        "just",
         "gitignore",
         "make",
         "nu",
-        "css",
+        "regex",
         "scss",
         "svelte",
         "kdl",
@@ -43,11 +46,20 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      codelens = {
-        enabled = true,
+      -- codelens = {
+      --   enabled = true,
+      -- },
+      inlayhint = {
+        enabled = false,
       },
-      servers = {
-        svelte = {},
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["sql"] = { "sql_formatter" },
       },
     },
   },
@@ -88,18 +100,5 @@ return {
         relative_time = true,
       },
     },
-  },
-  {
-    "NvChad/nvim-colorizer.lua",
-    opts = {
-      user_default_options = {},
-    },
-  },
-
-  -- Languages
-  -- TODO: Delete when will be available just in "nvim-treesitter/nvim-treesitter"
-  {
-    "NoahTheDuke/vim-just",
-    ft = { "just" },
   },
 }
