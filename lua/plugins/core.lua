@@ -36,6 +36,7 @@ return {
         "regex",
         "scss",
         "svelte",
+        "typescript",
         "kdl",
       },
     },
