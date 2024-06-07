@@ -26,30 +26,27 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, {
         "css",
         "just",
         "gitignore",
         "make",
-        "nu",
         "regex",
         "scss",
         "svelte",
         "typescript",
         "kdl",
-      },
-    },
-    dependencies = {
-      { "nushell/tree-sitter-nu" },
-    },
+      })
+    end,
   },
   {
     "neovim/nvim-lspconfig",
     opts = {
-      -- codelens = {
-      --   enabled = true,
-      -- },
+      codelens = {
+        enabled = true,
+      },
       inlayhint = {
         enabled = false,
       },
@@ -70,14 +67,10 @@ return {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/neotest-plenary",
-      "rouge8/neotest-rust",
-      "nvim-neotest/neotest-go",
     },
     opts = {
       adapters = {
         "neotest-plenary",
-        "neotest-rust",
-        "neotest-go",
       },
     },
   },
