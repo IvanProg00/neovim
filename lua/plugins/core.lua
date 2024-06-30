@@ -21,6 +21,7 @@ return {
         go = { "golangcilint" },
         sql = { "sqlfluff" },
         terraform = { "tfsec" },
+        proto = { "buf_lint" },
       },
     },
   },
