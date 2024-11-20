@@ -36,6 +36,7 @@ return {
         "make",
         "regex",
         "scss",
+        "sql",
         "svelte",
         "typescript",
         "kdl",
