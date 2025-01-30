@@ -18,7 +18,8 @@ require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-    { import = "lazyvim.plugins.extras.ai.codeium" },
+    { import = "lazyvim.plugins.extras.ai.supermaven" },
+
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
 
     { import = "lazyvim.plugins.extras.dap.core" },
@@ -58,7 +59,10 @@ require("lazy").setup({
     version = false,
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
   performance = {
     rtp = {
       disabled_plugins = {
