@@ -5,11 +5,12 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
+        "deno",
         "emmet-language-server",
         "golangci-lint",
         "hadolint",
-        "sqlfluff",
         "sql-formatter",
+        "sqlfluff",
         "tfsec",
       })
     end,
@@ -19,9 +20,9 @@ return {
     opts = {
       linters_by_ft = {
         go = { "golangcilint" },
+        proto = { "buf_lint" },
         sql = { "sqlfluff" },
         terraform = { "tfsec" },
-        proto = { "buf_lint" },
       },
     },
   },
@@ -31,15 +32,16 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
         "css",
-        "just",
         "gitignore",
+        "just",
+        "kdl",
         "make",
+        "mermaid",
         "regex",
         "scss",
         "sql",
         "svelte",
         "typescript",
-        "kdl",
       })
     end,
   },
@@ -65,13 +67,6 @@ return {
   },
 
   -- Editor
-  { "echasnovski/mini.indentscope", enabled = false },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = {
-      scope = { enabled = true },
-    },
-  },
   {
     "lewis6991/gitsigns.nvim",
     opts = {
